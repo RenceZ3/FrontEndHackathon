@@ -1,0 +1,41 @@
+@import '../../../assets/styles/colours.scss';
+.login-form {
+    background-image: url('../../../assets/img/login_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    .form-section {
+        background-color: rgba($primary-light-color, 0.4);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        border-radius: 20px;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        .fill-out {
+            display: grid;
+            padding: 40px;
+            margin: 30px;
+        }
+        
+        label, input, button {
+            display: block;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 580px){
+    .login-form {
+        .form-section {
+            align-items: center;
+            .fill-out {
+                padding: 10px;
+                margin: 10px;
+                transition: all 1s;
+            }
+        }
+    }
+}

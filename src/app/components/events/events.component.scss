@@ -1,0 +1,15 @@
+.event-section {
+    .event-grid {
+        place-items: center;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        grid-gap: 2em;
+        .card-event {
+            box-shadow:  -10px 5px 5px rgba(159, 217, 235, 0.322);
+            width: 18rem;
+            .card-body {
+                overflow-y: auto;
+                height: 250px;
+            }
+        }
+    }
+}

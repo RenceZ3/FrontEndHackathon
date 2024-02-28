@@ -1,0 +1,27 @@
+<div class="home-page bg-entry">
+    <div class="text-section">
+        <h1 class="header-text">Building Resilient Ecosystems</h1>
+        <button class="btn btn-primary btn-lg btn-start" (click)="smoothScroll(overview_section)">Let's Go</button>
+    </div>
+</div>
+
+<div #overview_section>
+    <app-navbar></app-navbar>
+</div>
+
+<div class="home-page container my-5">
+    <div class="row">
+        <div class="col-lg-6 p-3 w-50" *ngFor="let news of newsListing">
+            <a [href]="news.newsUrl" class="link-offset-2 link-underline link-underline-opacity-0 d-block ">
+                <h2>{{ news.title }}</h2>
+                <img [src]="news.images.thumbnail" alt="" srcset="">
+                <p>{{ news.snippet }}</p>
+                <em>{{ news.publisher }}</em>
+            </a>
+        </div>
+    </div>
+</div>
+
+<app-chatbot></app-chatbot>
+
+<app-footer></app-footer>

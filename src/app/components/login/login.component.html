@@ -1,0 +1,16 @@
+<div class="login-form">
+    <div class="form-section">
+        <form action="" [formGroup]="loginForm">
+            <div class="fill-out">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" formControlName="username" class="form-control mb-3">
+            
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" formControlName="password" class="form-control mb-3">
+            
+                <button class="btn btn-primary mb-1" (click)="onClickLogin()">Login</button>
+                <button class="btn btn-light mb-3" (click)="onClickRegister()">Register</button>
+            </div>
+        </form>
+    </div>
+</div>

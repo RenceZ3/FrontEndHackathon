@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+
+<div class="container w-50 my-3 report-container">
+    <select (change)="selectCamera($event)" class="form-select w-25">
+      <option value="environment">Back Camera</option>
+      <option value="user">Front Camera</option>
+    </select>
+    <video id="camera-preview" autoplay class="w-50 "></video>
+    <canvas id="captured-photo"></canvas>
+    <button (click)="capturePhoto()" class="capture-btn btn btn-primary d-block">Capture Photo</button>
+    <img id="captured-image" />
+    <form action="" [formGroup]="reportForm">
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description" class="form-control mb-2" formControlName="description">
+        <label for="location">Location</label>
+        <input type="text" name="location" id="location" class="form-control mb-2" formControlName="location">
+        <button class="btn btn-primary" (click)="createReportSubmit()">Submit</button>
+    </form>
+    <em class="mt-4">*Please note that the report feature is intended for responsible and appropriate use. Misuse of the feature may result in consequences.</em>
+</div>
+
+<app-chatbot></app-chatbot>

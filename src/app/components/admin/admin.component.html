@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="controlNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <a class="navbar-brand" [routerLink]="['/home']">Aqua Sentry</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <!-- <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Home</a> -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/admin']" routerLinkActive="active">Reports</a>
+                </li>
+                <li class="nav-item">
+                    <!-- <a class="nav-link" [routerLink]="['/marketplace']" routerLinkActive="active">Users</a> -->
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Description</th>
+            <th scope="col">Location</th>
+            <th scope="col">Report Date</th>
+            <th scope="col">Image</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let report of reportLists; let i = index">
+                <td><a data-bs-toggle="modal" data-bs-target="#reportModal" (click)="getID(report.id)">{{ i+1 }}</a></td>
+                <td>{{ report.description }}</td>
+                <td>{{ report.location }}</td>
+                <td>{{ report.report_date}}</td>
+                <td><img [src]="report.image | base64ToImage: 'jpeg'" width="20%"></td>
+            </tr>
+        </tbody>
+      </table>
+</div>
+
+<div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="reportModalLabel">{{ reportDetail?.description }}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <div class="details">
+            <img [src]="reportDetail?.image | base64ToImage: 'jpeg'" width="80%">
+        </div>
+        <div class="text-content">
+            <em>{{ reportDetail?.location }}</em>
+            <p>{{ reportDetail?.report_date}}</p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    </div>
+    </div>
+</div>
+</div>

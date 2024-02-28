@@ -1,0 +1,23 @@
+<div class="container register-section">
+    <div class="row">
+        <div class="form-section">
+            <form action="" [formGroup]="formRegister">
+                <div class="fill-out">
+                    <label for="">First Name</label>
+                    <input type="text" name="first_name" id="first_name" formControlName="firstName" class="form-control">
+                    <label for="">Last Name</label>
+                    <input type="text" name="last_name" id="last_name" formControlName="lastName" class="form-control">
+                    <label for="">Username</label>
+                    <input type="text" name="username" id="username" formControlName="username" class="form-control">
+                    <label for="">Password</label>
+                    <input type="text" name="password" id="password" formControlName="password" class="form-control">
+                    <label for="">Retype Password</label>
+                    <input type="text" name="rePass" id="rePass" formControlName="verPassword" class="form-control">
+                    <label for="">Upload Photo</label>
+                    <input type="file" class="custom-file-input" #fileInput formControlName="imageUpload"  (change)="onfileUploadImage($event)">
+                    <button class="btn btn-primary" (click)="onCLickSignUp()">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

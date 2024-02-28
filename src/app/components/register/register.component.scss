@@ -1,0 +1,41 @@
+@import '../../../assets/styles/colours.scss';
+
+.register-section {
+    background-image: url('../../../assets/img/signup_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.2);
+    height: 100vh;
+    .form-section {
+        width: 50%;
+        background-color: rgba($primary-light-color, 0.9);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        border-radius: 20px;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        .fill-out {
+            display: grid;
+            padding: 40px;
+            margin: 30px;
+        }
+        
+    }
+    label, input, button {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .register-section {
+        .form-section {
+            width: 70%;
+            .fill-out {
+                padding: 20px;
+                margin: 10px;
+            }
+        }
+    }
+}

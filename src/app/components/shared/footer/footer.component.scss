@@ -1,0 +1,13 @@
+.footer-section {
+    background-color: rgba(17, 11, 11, 0.519);
+    height: 10em;
+    position: sticky;
+    z-index: -1;
+    .image-section {
+        display: block;
+        padding: 1em;
+        img {
+            width: 100px;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.marketplace-grid {
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-gap: 2em;
+    .market-card {
+        width: 18rem;
+    }
+}
+
+.earning {
+    text-align: right;
+}

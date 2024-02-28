@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<div class="contrainer mx-5 my-5 event-section">
+  <div class="about-events mx-5">
+    <p class="mx-3">Across the globe, various events are emerging to address the pressing issue of climate change. From international
+      conferences on water pollution control to forums on sustainable energy economics, these gatherings serve as vital
+      platforms for global collaboration. Participants, including experts, policymakers, and activists, converge to
+      exchange insights and explore innovative solutions to environmental challenges. By fostering partnerships and
+      mobilizing resources, these events aim to empower communities worldwide to mitigate environmental degradation and
+      build a more sustainable future.</p>
+  </div>
+  <div class="d-grid event-grid">
+    <div *ngFor="let events of eventData" class="card card-event">
+      <div class="card-header"><strong>{{ events.name }}</strong></div>
+      <div class="card-body">
+        <!-- <h5 class="card-title">{{ events.venue.country }}, {{ events.venue.full_address }}</h5> -->
+        <em class="card-text">{{ events.start_time | date: 'medium' }}</em>
+        <p class="card-text">{{ events.description }}</p>
+      </div>
+      <div class="card-footer">
+        <a [href]="[events.info_links[0].link]" class="btn btn-primary">More Info</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-chatbot></app-chatbot>
+
+<app-footer></app-footer>
